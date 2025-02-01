@@ -25,4 +25,4 @@ symfony serve
 5. API доступне за **`http://127.0.0.1:8000/api/users`**.
 
 ## 📜 Документація
-👉 **[Swagger UI](https://documenter.getpostman.com/view/41722534/2sAYX3qiNL)**
+👉 **[Postman UI](https://documenter.getpostman.com/view/41722534/2sAYX3qiNL)**
