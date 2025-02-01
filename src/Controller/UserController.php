@@ -124,14 +124,18 @@ class UserController extends AbstractController
     {
         $requestData = json_decode($request->getContent(), true);
 
-        if (!isset($requestData['name'], $requestData['email'])) {
+        if (!isset($requestData['name']) & !isset($requestData['email'])) {
             throw new UnprocessableEntityHttpException("name or email is required");
         }
 
         $userData = $this->findUserById($id);
 
-        $userData['name'] = $requestData['name'];
-        $userData['email'] = $requestData['email'];
+        if (isset($requestData['name'])){
+            $userData['name'] = $requestData['name'];
+        } 
+        if (isset($requestData['email'])){
+            $userData['email'] = $requestData['email'];
+        } 
 
         return new JsonResponse(['data' => $userData], Response::HTTP_OK);
     }
