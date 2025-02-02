@@ -19,38 +19,38 @@ class UserController extends AbstractController
     public const USERS_DATA = [
         [
             'id'    => '1',
-            'email' => 'test1@gmail.com',
-            'name'  => 'John1'
+            'email' => 'reiclid@gmail.com',
+            'name'  => 'Reiclid002'
         ],
         [
             'id'    => '2',
-            'email' => 'test2@gmail.com',
-            'name'  => 'John2'
+            'email' => 'muy1206@gmail.com',
+            'name'  => 'Denis'
         ],
         [
             'id'    => '3',
-            'email' => 'test3@gmail.com',
-            'name'  => 'John3'
+            'email' => 'ipz234_gdi@student.ztu.edu.ua',
+            'name'  => 'Denis Hrushevitskyi'
         ],
         [
             'id'    => '4',
-            'email' => 'test4@gmail.com',
-            'name'  => 'John4'
+            'email' => 'dadavasya@gmail.com',
+            'name'  => 'Vitaliy'
         ],
         [
             'id'    => '5',
-            'email' => 'test5@gmail.com',
-            'name'  => 'John5'
+            'email' => 'max.maxbetov@mail.com',
+            'name'  => 'Max Maxbetov'
         ],
         [
             'id'    => '6',
-            'email' => 'test6@gmail.com',
-            'name'  => 'John6'
+            'email' => 'kate.novak@mail.com',
+            'name'  => 'Kateryna Novak'
         ],
         [
             'id'    => '7',
-            'email' => 'test7@gmail.com',
-            'name'  => 'John7'
+            'email' => 'sergey.bondarenko@gmail.com',
+            'name'  => 'Serhii Bondarenko'
         ],
     ];
 
@@ -86,7 +86,7 @@ class UserController extends AbstractController
             'data' => self::USERS_DATA
         ], Response::HTTP_OK);
     }
-
+    
     #[Route('/users', name: 'app_user_new', methods: ['POST'])]
     public function createItem(Request $request): JsonResponse
     {
@@ -120,6 +120,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/users/{id}/edit', name: 'app_product_edit', methods: ['PATCH'])]
+    #[IsGranted("ROLE_ADMIN")]
     public function edit(string $id, Request $request): JsonResponse
     {
         $requestData = json_decode($request->getContent(), true);
@@ -141,6 +142,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/users/{id}', name: 'app_product_delete', methods: ['DELETE'])]
+    #[IsGranted("ROLE_ADMIN")]
     public function delete(string $id): JsonResponse
     {
         $this->findUserById($id);
