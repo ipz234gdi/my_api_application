@@ -5,55 +5,58 @@
 
 1. Встановіть choco:
  
-```bash
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 ```
 
 2. Встановіть PHP, Symfony CLI, Composer, Postman:
 
-```bash 
+```powershell 
 choco install php --version=8.1.27
 ```
-```bash 
+```powershell 
 choco install symfony-cli -y
 ```
-```bash 
+```powershell 
 choco install composer -y
 ```
-```bash 
+```powershell 
 choco install postman -y
 ```
-```bash 
+```powershell 
 choco install openssl -y 
 ```
 
 3. Клонуйте проєкт:
-```bash 
+```git
 git clone https://github.com/ipz234gdi/my_api_application.git
 ```
 - зайдіть в папку:
-```bash 
+```powershell 
 cd my_api_application
 ```
 
 4. Встановіть залежності:
-```bash 
+```powershell 
 composer install
+```
+```powershell 
+composer require "lexik/jwt-authentication-bundle"
 ```
 
 5. Згенерувати ключі:
-```bash
+```powershell
 php bin/console lexik:jwt:generate-keypair
 ```
 
 6. Запустіть сервер:
-```bash 
+```powershell 
 symfony serve
 ```
 
 7. API доступне за посиланням
-```bash
+```git
 http://127.0.0.1:8000/api/v1/users
 ```
 ## 📜 Документація
