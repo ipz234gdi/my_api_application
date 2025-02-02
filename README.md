@@ -29,12 +29,19 @@ git clone https://github.com/ipz234gdi/my_api_application.git cd my_api_applicat
 composer install
 ```
 
-5. Запустіть сервер:
+5. Згенерувати ключі:
+```bash
+php bin/console lexik:jwt:generate-keypair
+```
+
+6. Запустіть сервер:
 ```bash 
 symfony serve
 ```
 
-5. API доступне за **`http://127.0.0.1:8000/api/users`**.
-
+7. API доступне за посиланням
+```bash
+http://127.0.0.1:8000/api/v1/users
+```
 ## 📜 Документація
 👉 **[Postman UI](https://documenter.getpostman.com/view/41722534/2sAYX3qiNL)**
