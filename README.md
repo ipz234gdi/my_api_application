@@ -13,12 +13,15 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 2. Встановіть PHP, Symfony CLI, Composer, Postman:
 
 ```bash 
-choco install php -y choco install symfony-cli -y choco install composer -y choco install postman -y 
+choco install php --version=8.1.27
+choco install symfony-cli -y 
+choco install composer -y 
+choco install postman -y 
 ```
 
 3. Клонуйте проєкт:
 ```bash 
-git clone https://github.com/yourusername/my_api_project.git cd my_api_project
+git clone https://github.com/ipz234gdi/my_api_application.git cd my_api_application
 ```
 
 4. Встановіть залежності:
