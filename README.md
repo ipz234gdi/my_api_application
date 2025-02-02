@@ -14,9 +14,18 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ```bash 
 choco install php --version=8.1.27
-choco install symfony-cli -y 
-choco install composer -y 
-choco install postman -y 
+```
+```bash 
+choco install symfony-cli -y
+```
+```bash 
+choco install composer -y
+```
+```bash 
+choco install postman -y
+```
+```bash 
+choco install openssl -y 
 ```
 
 3. Клонуйте проєкт:
