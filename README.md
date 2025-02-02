@@ -21,7 +21,11 @@ choco install postman -y
 
 3. Клонуйте проєкт:
 ```bash 
-git clone https://github.com/ipz234gdi/my_api_application.git cd my_api_application
+git clone https://github.com/ipz234gdi/my_api_application.git
+```
+- зайдіть в папку:
+```bash 
+cd my_api_application
 ```
 
 4. Встановіть залежності:
